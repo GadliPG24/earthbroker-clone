@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-ZA">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EarthBroker - Business Directory | Earth Broker</title>
+<meta name="description" content="EarthBroker Business Directory - Find earthmoving equipment suppliers, dealers and service providers in South Africa." />
+<meta name="keywords" content="earthmoving business directory, equipment suppliers, earthmoving dealers South Africa" />
+<link rel="canonical" href="https://earthbroker.co.za/business-directory/" />
+<link rel="stylesheet" href="../../assets/css/style.css" />
+<link rel="stylesheet" href="../../assets/css/responsive.css" />
+<link rel="manifest" href="../../pwa-manifest.json" />
+<meta name="theme-color" content="#32373c" />
+</head>
+<body>
+<div id="page-container">
+  <header id="main-header">
+    <div class="container clearfix">
+      <div id="logo">
+        <a href="../../index.html">
+          <img src="../../assets/images/earthbroker-logo.svg" alt="Earth Broker" width="300" height="53" />
+        </a>
+      </div>
+      <nav id="top-menu">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../about/index.html">About</a></li>
+          <li><a href="../digital-magazine/index.html">Digital Magazine</a></li>
+          <li><a href="../classifieds/index.html">Online Classifieds</a></li>
+          <li><a href="../advertisers-index/index.html">Advertisers Index</a></li>
+          <li><a href="../featured-business/index.html">Featured Business</a></li>
+          <li><a href="../business-directory/index.html" class="active">Business Directory</a></li>
+          <li><a href="../contact/index.html">Subscribe</a></li>
+          <li><a href="../contact/index.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-toggle"><span></span><span></span><span></span></div>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>Business Directory</h1>
+      <p>Find companies, suppliers and service providers in the earthmoving industry</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../index.html">Home</a><span> / </span>Business Directory
+      </div>
+
+      <div class="text-center" style="margin-bottom:30px;">
+        <a href="?view=add" class="btn btn-accent">+ Add Your Listing</a>
+        <a href="../classifieds/index.html" class="btn btn-secondary">View All Classifieds</a>
+      </div>
+
+      <div class="directory-categories" style="margin-bottom:30px;">
+        <a href="?cat=wheel-loaders" class="dir-cat-btn">Wheel Loaders</a>
+        <a href="?cat=tractors" class="dir-cat-btn">Tractors</a>
+        <a href="?cat=tlbs" class="dir-cat-btn">TLB's</a>
+        <a href="?cat=tipper-trucks" class="dir-cat-btn">Tipper Trucks</a>
+        <a href="?cat=skidsteers" class="dir-cat-btn">Skidsteers</a>
+        <a href="?cat=off-road-dumpers" class="dir-cat-btn">Off Road Dumpers</a>
+        <a href="?cat=motor-graders" class="dir-cat-btn">Motor Graders</a>
+        <a href="?cat=forklifts" class="dir-cat-btn">Forklifts</a>
+        <a href="?cat=excavators" class="dir-cat-btn">Excavators</a>
+        <a href="?cat=dozers" class="dir-cat-btn">Dozers</a>
+        <a href="?cat=cranes" class="dir-cat-btn">Cranes</a>
+      </div>
+
+      <div class="content-with-sidebar">
+        <aside class="filter-sidebar">
+          <h3>Filter Directory</h3>
+          <div class="filter-group">
+            <label>Category</label>
+            <select id="dir-category-filter">
+              <option value="">All Categories</option>
+              <option value="Earthmoving Machinery">Earthmoving Machinery</option>
+              <option value="Excavators">Excavators</option>
+              <option value="Wheel Loader's">Wheel Loaders</option>
+              <option value="Graders">Graders</option>
+              <option value="Tippers">Tippers</option>
+              <option value="TLB's">TLB's</option>
+              <option value="Dozers">Dozers</option>
+              <option value="Cranes">Cranes</option>
+              <option value="Forklifts">Forklifts</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Location</label>
+            <select>
+              <option value="">All Locations</option>
+              <option value="gauteng">Gauteng</option>
+              <option value="kzn">KZN</option>
+              <option value="western-cape">Western Cape</option>
+              <option value="eastern-cape">Eastern Cape</option>
+            </select>
+          </div>
+          <div class="filter-actions">
+            <button class="btn btn-primary btn-sm" onclick="alert('Filter applied')">Search</button>
+            <button class="btn btn-secondary btn-sm" onclick="window.location.reload()">Reset</button>
+          </div>
+        </aside>
+
+        <div class="main-content">
+          <div class="results-count"></div>
+          <div class="listings-grid" id="directory-listings"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer id="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../about/index.html">About</a></li>
+            <li><a href="../digital-magazine/index.html">Digital Magazine</a></li>
+            <li><a href="../classifieds/index.html">Classifieds</a></li>
+            <li><a href="../advertisers-index/index.html">Advertisers Index</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Directory</h4>
+          <ul>
+            <li><a href="../business-directory/index.html">Business Directory</a></li>
+            <li><a href="../featured-business/index.html">Featured Business</a></li>
+            <li><a href="../business-directory/index.html?view=add">Submit Your Listing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li>Phone: +27 83 456 4027</li>
+            <li><a href="../contact/index.html">Contact Form</a></li>
+            <li><a href="https://www.instagram.com/earthbroker/" target="_blank">Instagram</a></li>
+            <li><a href="https://www.facebook.com/earthbroker/" target="_blank">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Subscribe</h4>
+          <p>Stay updated with the latest equipment listings</p>
+          <form class="subscribe-form" action="../contact/index.html" method="get">
+            <input type="email" placeholder="Your Email" required />
+            <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; Earthbroker - 2018 | Design by SDDS Web Design | <a href="#">Privacy Policy</a></p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<div id="pwa-install-banner" class="hidden">
+  <span>Add Earth Broker to your Homescreen!</span>
+  <button id="install-pwa">Add</button>
+  <button id="close-pwa-banner">x</button>
+</div>
+
+<script src="../../assets/js/jquery-3.7.1.min.js"></script>
+<script src="../../assets/js/main.js"></script>
+<script src="../../assets/js/data.js"></script>
+</body>
+</html>

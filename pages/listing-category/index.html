@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-ZA">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Listing Category | Earth Broker</title>
+<meta name="description" content="Browse earthmoving equipment by category" />
+<link rel="stylesheet" href="../../assets/css/style.css" />
+<link rel="stylesheet" href="../../assets/css/responsive.css" />
+</head>
+<body>
+<div id="page-container">
+  <header id="main-header">
+    <div class="container clearfix">
+      <div id="logo">
+        <a href="../../index.html"><img src="../../assets/images/earthbroker-logo.svg" alt="Earth Broker" width="300" height="53" /></a>
+      </div>
+      <nav id="top-menu">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../classifieds/index.html">Classifieds</a></li>
+          <li><a href="../business-directory/index.html">Directory</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-toggle"><span></span><span></span><span></span></div>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <div class="container">
+      <h1 id="cat-page-title">Category</h1>
+      <p>Browse listings in this category</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../index.html">Home</a><span> / </span>
+        <a href="../classifieds/index.html">Classifieds</a><span> / </span>
+        <span id="cat-breadcrumb">Category</span>
+      </div>
+      <div class="results-count" id="cat-results-count"></div>
+      <div class="listings-grid" id="category-listings"></div>
+    </div>
+  </div>
+
+  <footer id="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../about/index.html">About</a></li>
+            <li><a href="../digital-magazine/index.html">Digital Magazine</a></li>
+            <li><a href="../classifieds/index.html">Classifieds</a></li>
+            <li><a href="../advertisers-index/index.html">Advertisers Index</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Directory</h4>
+          <ul>
+            <li><a href="../business-directory/index.html">Business Directory</a></li>
+            <li><a href="../featured-business/index.html">Featured Business</a></li>
+            <li><a href="../business-directory/index.html?view=add">Submit Your Listing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li>Phone: +27 83 456 4027</li>
+            <li><a href="../contact/index.html">Contact Form</a></li>
+            <li><a href="https://www.instagram.com/earthbroker/" target="_blank">Instagram</a></li>
+            <li><a href="https://www.facebook.com/earthbroker/" target="_blank">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Subscribe</h4>
+          <p>Stay updated with the latest equipment listings</p>
+          <form class="subscribe-form" action="../contact/index.html" method="get">
+            <input type="email" placeholder="Your Email" required />
+            <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; Earthbroker - 2018 | Design by SDDS Web Design | <a href="#">Privacy Policy</a></p>
+      </div>
+    </div>
+  </footer>
+</div>
+<script src="../../assets/js/jquery-3.7.1.min.js"></script>
+<script src="../../assets/js/data.js"></script>
+<script>
+(function($) {
+  var params = new URLSearchParams(window.location.search);
+  var cat = params.get('cat') || '';
+  var catName = cat.replace(/-/g, ' ').replace(/\b\w/g, function(l) { return l.toUpperCase(); });
+  $('#cat-page-title').text(catName);
+  $('#cat-breadcrumb').text(catName);
+  document.title = catName + ' | Earth Broker';
+
+  var filtered = EB_DATA.listings.filter(function(l) {
+    return l.category.toLowerCase().replace(/[^a-z0-9]/g, '-') === cat ||
+           l.category.toLowerCase().indexOf(cat.replace(/-/g, '')) > -1;
+  });
+  if (filtered.length === 0) filtered = EB_DATA.listings;
+
+  var html = '';
+  filtered.forEach(function(item) {
+    var priceHtml = item.price ? '<div class="listing-price">' + item.price + '</div>' : '';
+    html += '<div class="listing-card">'
+      + '<div class="listing-img" style="height:180px;background:#e8e8e8;display:flex;align-items:center;justify-content:center;font-size:24px;color:#999;">' + item.title.charAt(0) + '</div>'
+      + '<div class="listing-body">'
+      + '<h3 class="listing-title"><a href="../listing-detail/index.html?id=' + item.id + '">' + item.title + '</a></h3>'
+      + '<div class="listing-meta">' + item.category + ' / ' + item.views + ' views</div>'
+      + priceHtml
+      + '</div></div>';
+  });
+  $('#category-listings').html(html);
+  $('#cat-results-count').text(filtered.length + ' item(s) found');
+})(jQuery);
+</script>
+</body>
+</html>

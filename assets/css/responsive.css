@@ -1,0 +1,6 @@
+/* Responsive overrides for Yellow Pages directory style */
+@media print {
+  #main-header, #main-footer, #pwa-install-banner, .hero-cta, .mobile-toggle { display: none !important; }
+  body { font-size: 12pt; color: #000; }
+  a { color: #000 !important; text-decoration: underline; }
+}
