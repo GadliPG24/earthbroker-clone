@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EarthBroker – Wireframe Prototype</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Comic Sans MS', 'Chalkboard SE', 'Segoe Print', cursive, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+    .container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+    h1 { font-size: 32px; margin-bottom: 4px; border-bottom: 3px solid #333; padding-bottom: 8px; }
+    .subtitle { font-size: 14px; color: #666; margin-bottom: 24px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .card {
+      border: 2px solid #333;
+      border-radius: 6px;
+      padding: 20px;
+      background: #fff;
+      text-decoration: none;
+      color: #333;
+      transition: background 0.2s;
+    }
+    .card:hover { background: #f0f0f0; }
+    .card .icon { font-size: 28px; margin-bottom: 6px; }
+    .card h3 { font-size: 16px; }
+    .card p { font-size: 12px; color: #666; }
+    .badge {
+      display: inline-block;
+      border: 1px solid #333;
+      border-radius: 3px;
+      padding: 1px 8px;
+      font-size: 10px;
+      background: #e8e8e8;
+      margin-top: 6px;
+    }
+    .section { margin-top: 30px; }
+    .section h2 { font-size: 18px; border-bottom: 2px dashed #999; padding-bottom: 4px; margin-bottom: 12px; }
+    .note {
+      border: 2px dashed #aaa;
+      padding: 14px 18px;
+      font-size: 13px;
+      color: #666;
+      margin-top: 20px;
+      background: #fcfcfc;
+      border-radius: 4px;
+    }
+    .live-link { display: block; text-align: center; margin-top: 24px; }
+    .live-link a {
+      display: inline-block;
+      border: 2px solid #333;
+      border-radius: 4px;
+      padding: 10px 32px;
+      background: #333;
+      color: #fff;
+      text-decoration: none;
+      font-size: 15px;
+    }
+    .live-link a:hover { background: #555; }
+    @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📐 EarthBroker – Wireframe Prototype</h1>
+    <p class="subtitle">Balsamiq-style low-fidelity wireframes for the EarthBroker earthmoving equipment directory platform.</p>
+
+    <div class="grid">
+      <a href="home.html" class="card">
+        <div class="icon">🏠</div>
+        <h3>Home Page</h3>
+        <p>Hero, recent classifieds, categories, featured businesses, footer</p>
+        <span class="badge">Core</span>
+      </a>
+      <a href="classifieds.html" class="card">
+        <div class="icon">📦</div>
+        <h3>Classifieds</h3>
+        <p>Search + filter bar, card grid with pagination, category tags</p>
+        <span class="badge">Core</span>
+      </a>
+      <a href="business-directory.html" class="card">
+        <div class="icon">🏢</div>
+        <h3>Business Directory</h3>
+        <p>List view with search, ratings, category filters, pagination</p>
+        <span class="badge">Directory</span>
+      </a>
+      <a href="listing-detail.html" class="card">
+        <div class="icon">📄</div>
+        <h3>Listing Detail</h3>
+        <p>Photo gallery, description, meta grid, contact actions, map, similar items</p>
+        <span class="badge">Core</span>
+      </a>
+      <a href="listing-category.html" class="card">
+        <div class="icon">⛰</div>
+        <h3>Category Page</h3>
+        <p>Excavators view with make/price filters, related categories sidebar</p>
+        <span class="badge">Browse</span>
+      </a>
+      <a href="advertisers-index.html" class="card">
+        <div class="icon">🔤</div>
+        <h3>A–Z Advertisers Index</h3>
+        <p>Alphabetical letter bar, advertiser list per letter</p>
+        <span class="badge">Directory</span>
+      </a>
+      <a href="featured-business.html" class="card">
+        <div class="icon">⭐</div>
+        <h3>Featured Businesses</h3>
+        <p>Premium business cards with ratings, tags, call-to-action</p>
+        <span class="badge">Premium</span>
+      </a>
+      <a href="digital-magazine.html" class="card">
+        <div class="icon">📖</div>
+        <h3>Digital Magazine</h3>
+        <p>Magazine cover, article list, previous editions, subscribe form</p>
+        <span class="badge">Content</span>
+      </a>
+      <a href="about.html" class="card">
+        <div class="icon">ℹ️</div>
+        <h3>About Us</h3>
+        <p>Company info, mission/vision, stats, CTA to register</p>
+        <span class="badge">Info</span>
+      </a>
+      <a href="contact.html" class="card">
+        <div class="icon">✉️</div>
+        <h3>Contact Us</h3>
+        <p>Contact form, details, map placeholder, social links</p>
+        <span class="badge">Info</span>
+      </a>
+    </div>
+
+    <div class="section">
+      <h2>📋 Design Notes</h2>
+      <ul style="font-size:13px;color:#555;list-style-position:inside">
+        <li><strong>Style:</strong> Low-fidelity Balsamiq-style wireframe — sketchy font, grayscale, dashed borders, "✕" image placeholders</li>
+        <li><strong>Layout:</strong> All pages share a consistent header (top bar + logo + nav) and footer</li>
+        <li><strong>Responsive:</strong> Grids collapse to single column on mobile</li>
+        <li><strong>Key flows:</strong> Home → Classifieds → Detail | Home → Browse Categories → Category → Detail | Directory → A–Z Index</li>
+        <li><strong>CTAs:</strong> WhatsApp contact, call now, share, save, subscribe — all identified per page</li>
+        <li><strong>Ad placements:</strong> Banner ad slots marked on all appropriate pages</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>🔗 Page Flow Map</h2>
+      <pre style="font-size:12px;color:#555;background:#f0f0f0;padding:12px;border:1px solid #ccc;border-radius:4px;overflow-x:auto">
+Home ──┬──→ Classifieds ──→ Listing Detail
+       ├──→ Categories ──→ Category Page ──→ Listing Detail
+       ├──→ Business Directory ──→ A–Z Index
+       ├──→ Featured Businesses
+       ├──→ Digital Magazine
+       ├──→ About
+       └──→ Contact
+      </pre>
+    </div>
+
+    <div class="note">
+      📌 <strong>Prototype Purpose:</strong> These wireframes define the layout, content hierarchy, and user flow 
+      before final UI polish. All 10 key pages of the EarthBroker platform are represented.
+    </div>
+
+    <div class="live-link">
+      <a href="https://gadlipg24.github.io/earthbroker-clone/" target="_blank">🚀 Visit Live Site →</a>
+    </div>
+  </div>
+</body>
+</html>
