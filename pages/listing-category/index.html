@@ -13,7 +13,7 @@
   <header id="main-header">
     <div class="container clearfix">
       <div id="logo">
-        <a href="../../index.html"><img src="../../assets/images/earthbroker-logo.svg" alt="Earth Broker" width="300" height="53" /></a>
+        <a href="../../index.html"><img src="../../assets/images/earthbroker-logo.png" alt="Earth Broker" width="300" height="53" /></a>
       </div>
       <nav id="top-menu">
         <ul>
@@ -94,6 +94,7 @@
 </div>
 <script src="../../assets/js/jquery-3.7.1.min.js"></script>
 <script src="../../assets/js/data.js"></script>
+<script>var IMG_BASE = '../../assets/images/listings/';</script>
 <script>
 (function($) {
   var params = new URLSearchParams(window.location.search);
@@ -112,8 +113,12 @@
   var html = '';
   filtered.forEach(function(item) {
     var priceHtml = item.price ? '<div class="listing-price">' + item.price + '</div>' : '';
+    var imgSrc = item.image ? IMG_BASE + item.image : '';
+    var imgHtml = item.image
+      ? '<img src="' + imgSrc + '" alt="' + item.title + '" class="listing-img" style="height:180px;object-fit:cover;" />'
+      : '<div class="listing-img" style="height:180px;background:#e8e8e8;display:flex;align-items:center;justify-content:center;font-size:24px;color:#999;">' + item.title.charAt(0) + '</div>';
     html += '<div class="listing-card">'
-      + '<div class="listing-img" style="height:180px;background:#e8e8e8;display:flex;align-items:center;justify-content:center;font-size:24px;color:#999;">' + item.title.charAt(0) + '</div>'
+      + '<a href="../listing-detail/index.html?id=' + item.id + '">' + imgHtml + '</a>'
       + '<div class="listing-body">'
       + '<h3 class="listing-title"><a href="../listing-detail/index.html?id=' + item.id + '">' + item.title + '</a></h3>'
       + '<div class="listing-meta">' + item.category + ' / ' + item.views + ' views</div>'

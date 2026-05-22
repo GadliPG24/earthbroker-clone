@@ -10,8 +10,9 @@
       var html = '';
       var items = limit ? data.slice(0, limit) : data;
       items.forEach(function(item) {
+        var imgSrc = item.image ? IMG_BASE + item.image : '';
         var imgHtml = item.image
-          ? '<img src="' + item.image + '" alt="' + item.title + '" class="listing-img" />'
+          ? '<img src="' + imgSrc + '" alt="' + item.title + '" class="listing-img" />'
           : '<div class="listing-img">' + item.title.charAt(0) + '</div>';
         var priceHtml = item.price ? '<div class="listing-price">' + item.price + '</div>' : '';
         html += '<div class="listing-card">'

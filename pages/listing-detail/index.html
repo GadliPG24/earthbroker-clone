@@ -13,7 +13,7 @@
   <header id="main-header">
     <div class="container clearfix">
       <div id="logo">
-        <a href="../../index.html"><img src="../../assets/images/earthbroker-logo.svg" alt="Earth Broker" width="300" height="53" /></a>
+        <a href="../../index.html"><img src="../../assets/images/earthbroker-logo.png" alt="Earth Broker" width="300" height="53" /></a>
       </div>
       <nav id="top-menu">
         <ul>
@@ -38,7 +38,7 @@
       <div class="detail-grid">
         <div class="detail-main">
           <div class="detail-images">
-            <img src="../../assets/images/placeholder-equipment.svg" alt="Equipment Image" id="detail-image" />
+            <img src="../../assets/images/listings/listing-10.jpg" alt="Equipment Image" id="detail-image" style="width:100%;height:auto;object-fit:cover;" />
           </div>
           <div class="detail-info">
             <h1 id="detail-title">Loading...</h1>
@@ -128,8 +128,8 @@
   </footer>
 </div>
 <script src="../../assets/js/jquery-3.7.1.min.js"></script>
-<script src="../../assets/js/main.js"></script>
 <script src="../../assets/js/data.js"></script>
+<script>var IMG_BASE = '../../assets/images/listings/';</script>
 <script>
 (function($) {
   var params = new URLSearchParams(window.location.search);
@@ -147,13 +147,15 @@
     $('#detail-id').text(item.id);
     $('#detail-category').text(item.category);
     $('#detail-views').text(item.views);
+    if (item.image) { $('#detail-image').attr('src', IMG_BASE + item.image); }
     document.title = item.title + ' | Earth Broker';
 
     // Similar listings
     var similar = EB_DATA.listings.filter(function(l) { return l.category === item.category && l.id !== item.id; }).slice(0, 3);
     var html = '';
     similar.forEach(function(s) {
-      html += '<div class="listing-card"><div class="listing-body"><h3 class="listing-title"><a href="index.html?id=' + s.id + '">' + s.title + '</a></h3><div class="listing-meta">' + s.category + '</div></div></div>';
+      var simg = s.image ? '<img src="' + IMG_BASE + s.image + '" alt="' + s.title + '" style="width:100%;height:120px;object-fit:cover;" />' : '';
+      html += '<div class="listing-card">' + simg + '<div class="listing-body"><h3 class="listing-title"><a href="index.html?id=' + s.id + '">' + s.title + '</a></h3><div class="listing-meta">' + s.category + '</div></div></div>';
     });
     $('#similar-listings').html(html);
   } else {
