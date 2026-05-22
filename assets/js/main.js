@@ -16,9 +16,9 @@
           : '<div class="listing-img">' + item.title.charAt(0) + '</div>';
         var priceHtml = item.price ? '<div class="listing-price">' + item.price + '</div>' : '';
         html += '<div class="listing-card">'
-          + '<a href="../listing-detail/index.html?id=' + item.id + '">' + imgHtml + '</a>'
+          + '<a href="' + (typeof DETAIL_BASE !== 'undefined' ? DETAIL_BASE : 'listing-detail/') + 'index.html?id=' + item.id + '">' + imgHtml + '</a>'
           + '<div class="listing-body">'
-          + '<h3 class="listing-title"><a href="../listing-detail/index.html?id=' + item.id + '">' + item.title + '</a></h3>'
+          + '<h3 class="listing-title"><a href="' + (typeof DETAIL_BASE !== 'undefined' ? DETAIL_BASE : 'listing-detail/') + 'index.html?id=' + item.id + '">' + item.title + '</a></h3>'
           + '<div class="listing-meta">' + item.category + ' / ' + item.views + ' views</div>'
           + priceHtml
           + '</div></div>';
